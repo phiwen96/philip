@@ -12,7 +12,7 @@ using namespace std;
 
 TEST_CASE ("app")
 {
-    
+    cout << TEST_FILE << endl;
 }
 
 
