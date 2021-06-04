@@ -1,1 +1,0 @@
-#include "array_0.hpp"
