@@ -15,7 +15,7 @@ add_library (${self} STATIC
 
 ph_precompile (TARGET ${self} PUBLIC PCH ${std_pch} ${boost_pch})
 
-# add_library (ph::algorithms ALIAS ${self})
+add_library (ph::philip ALIAS ${self})
 target_link_libraries (${self} PRIVATE ${Boost_LIBRARIES} ph::concepts ph::file)
 target_include_directories (${self} PUBLIC ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS} ph::concepts ph::file)
 # target_include_directories (${self} PUBLIC ph::coroutines)
