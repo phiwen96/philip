@@ -10,7 +10,7 @@
 
 using namespace std;
 
-TEST_CASE ("test linear search")
+TEST_CASE ("app")
 {
     
 }
