@@ -15,13 +15,16 @@ add_subdirectory (cmake/phake)
 # 	add_subdirectory (dependencies/ph_color)
 # endif ()
 
-if (NOT TARGET ph_file)
-	add_subdirectory (dependencies/ph_file)
-endif ()
 
 if (NOT TARGET ph_concepts)
 	add_subdirectory (dependencies/ph_concepts)
 endif ()
+
+
+if (NOT TARGET ph_file)
+	add_subdirectory (dependencies/ph_file)
+endif ()
+
 
 
 if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
