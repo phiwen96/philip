@@ -11,6 +11,10 @@ project (
 
 add_subdirectory (cmake/phake)
 
+# if (NOT TARGET phake)
+# 	add_subdirectory (dependencies/phake)
+# endif ()
+
 # if (NOT TARGET ph_color)
 # 	add_subdirectory (dependencies/ph_color)
 # endif ()
