@@ -7,3 +7,6 @@
 [submodule "dependencies/ph_concepts"]
 	path = dependencies/ph_concepts
 	url = https://github.com/phiwen96/ph_concepts
+[submodule "dependencies/ph_hash"]
+	path = dependencies/ph_hash
+	url = https://github.com/phiwen96/ph_hash
