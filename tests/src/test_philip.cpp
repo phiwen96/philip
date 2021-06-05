@@ -9,12 +9,18 @@
 
 
 
-using namespace std;
+
+
+
+
+
+
 
 TEST_CASE ("app")
 {
+    using namespace std;
     char* source = ph::file::read (TEST_FILE);
-    cout << source << endl;
+    free (source);
 }
 
 

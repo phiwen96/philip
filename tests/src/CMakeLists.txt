@@ -15,9 +15,9 @@ macro (ph_add_test name)
 	target_sources (test_${name} PRIVATE ../test.hpp)
 	file (GLOB test_file ../test.hpp)
 	target_compile_definitions (test_${name} PRIVATE TEST_FILE="${test_file}")
-	if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+	# if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 		set_target_properties(test_${name}          PROPERTIES FOLDER "${PROJECT_NAME}")
-	endif()		
+	# endif()		
 endmacro ()
 
 
