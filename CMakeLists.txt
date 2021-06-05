@@ -25,6 +25,10 @@ if (NOT TARGET ph_file)
 	add_subdirectory (dependencies/ph_file)
 endif ()
 
+if (NOT TARGET ph_hash)
+	add_subdirectory (dependencies/ph_hash)
+endif ()
+
 
 
 if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)

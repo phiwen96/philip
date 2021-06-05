@@ -16,8 +16,8 @@ add_library (${self} STATIC
 ph_precompile (TARGET ${self} PUBLIC PCH ${std_pch} ${boost_pch})
 
 add_library (ph::philip ALIAS ${self})
-target_link_libraries (${self} PRIVATE ${Boost_LIBRARIES} ph::concepts ph::file)
-target_include_directories (${self} PUBLIC ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS} ph::concepts ph::file)
+target_link_libraries (${self} PRIVATE ${Boost_LIBRARIES} ph::concepts ph::file ph::hash)
+target_include_directories (${self} PUBLIC ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS} ph::concepts ph::file ph::hash)
 # target_include_directories (${self} PUBLIC ph::coroutines)
 target_compile_features (${self} PUBLIC cxx_std_20)
 target_include_directories (${self} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
