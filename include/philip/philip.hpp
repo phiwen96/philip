@@ -8,4 +8,16 @@ auto mod (Floating auto x, Floating auto y) -> Floating auto;
 
 
 
-auto for_each (Range auto or )
+auto for_each (Range auto&& x, auto&& fun)
+{
+    for (auto&& i : x)
+    {
+        fun (forward (i));
+    }
+}
+
+EAT({
+    auto for_each (Range auto r)
+    auto for_each (Range auto&& r)
+})
+

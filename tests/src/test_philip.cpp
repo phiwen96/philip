@@ -13,17 +13,62 @@
 
 
 
+auto fun = [] (Number auto x) {std::cout << x << std::endl;};
 
 
 
-TEST_CASE ("app")
+TEST_CASE ("for_each")
+{
+    return;
+    GIVEN ("vector")
+    {
+        std::vector <int> in {1, 2, 3};
+        for_each (in, fun);
+    }
+    
+    GIVEN ("string")
+    {
+        std::string in {"hej"};
+        for_each (in, fun);
+    }
+    
+    GIVEN ("char const*")
+    {
+        char const* in {"hej"};
+//        for_each (in, fun);
+    }
+}
+
+
+#define Self Test
+struct Self
+{
+    
+//    Self () = delete;
+    Self () {}
+    Self (Self &&) = delete;
+    Self (Self const&) = delete;
+    
+    Self& operator= (Self &&) = delete;
+    Self& operator= (Self const&) = delete;
+};
+#undef Self
+
+auto te (auto&& x) {std::cout << std::is_same_v <decltype (x), Test &> << std::endl;}
+
+TEST_CASE ("")
+{
+    Test const  t;
+    te (t);
+}
+
+
+TEST_CASE ("")
 {
     using namespace std;
     char* source = ph::file::read (TEST_FILE);
     free (source);
 }
-
-
 
 
 #endif
