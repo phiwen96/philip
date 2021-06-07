@@ -36,17 +36,19 @@ endif ()
 
 
 if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-	
 	add_compile_definitions (RUN_CATCH)
 	# Let's ensure -std=g++xx instead of -std=c++xx
-	set (CMAKE_CXX_STANDARD 20)
-	set (CMAKE_CXX_STANDARD_REQUIRED ON)
+	# set (CMAKE_CXX_STANDARD 17)
+	set (CLANG_CXX_LANGUAGE_STANDARD 17)
+	# set (CMAKE_CXX_STANDARD_REQUIRED ON)
 	set (CMAKE_CXX_EXTENSIONS ON)
-
+	# set (CLANG_CXX_LANGUAGE_STANDARD "c++2a")
 	# Let's nicely support folders in IDEs
 	set_property (GLOBAL PROPERTY USE_FOLDERS ON)
 
-
+	# set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+	# set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} CLANG_CXX_LANGUAGE_STANDARD = c++2a")
+	
 
 	# Testing only available if this is the main app
 	# Note this needs to be done in the main CMakeLists

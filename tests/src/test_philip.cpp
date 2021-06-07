@@ -66,7 +66,10 @@ TEST_CASE ("")
 TEST_CASE ("")
 {
     using namespace std;
+    cout << __cplusplus << endl;
+    
     char* source = ph::file::read (TEST_FILE);
+//    cout << source << endl;
     free (source);
 }
 

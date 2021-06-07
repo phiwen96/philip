@@ -6,9 +6,28 @@ find_package(Catch2 REQUIRED)
 file(GLOB_RECURSE HEADER_LIST "include/*.hpp")
 file(GLOB SOURCE_LIST *.cpp)
 
+# set (self "test_${name}")
 # set (deps )
 macro (ph_add_test name)
+
 	add_executable (test_${name} testlib.cpp test_${name}.cpp ${HEADER_LIST})
+	# set_target_properties (test_${name} PROPERTIES CXX_STANDARD 17)
+	set_target_properties (test_${name} PROPERTIES CLANG_CXX_LANGUAGE_STANDARD 20)
+
+	
+	# CLANG_CXX_LANGUAGE_STANDARD
+	# PUBLIC $<$<CXX_COMPILER_ID:GNU>:cxx_attributes>
+	target_compile_features (test_${name}
+		PUBLIC
+			cxx_std_20
+			cxx_variadic_templates
+			cxx_nullptr
+			$<$<CXX_COMPILER_ID:GNU>:cxx_attributes>
+
+		PRIVATE
+		cxx_std_20
+			cxx_lambdas
+	)
 	target_link_libraries (test_${name} PRIVATE ph::concepts ${PROJECT_NAME} Catch2::Catch2 philip ph::file)
 	target_include_directories (test_${name} PRIVATE ../include ph::concepts include philip ph::file)
 	ph_precompile (TARGET test_${name} PRIVATE PCH ${std_pch})
